@@ -57,6 +57,25 @@ void Cau_4(int a[][100], int& m, int& n) {
 	}
 }
 
+void Cau_8(int a[][100], int& m, int& n) {
+	for (int i = 0; i < m; ++i) {
+		bool allEven = true;
+		for (int j = 0; j < n; ++j) {
+			if (a[i][j] % 2 != 0) {
+				allEven = false;
+				break;
+			}
+		}
+		if (allEven) {
+			cout << "Dong chi chua toan so chan la: ";
+			for (int j = 0; j < n; ++j) {
+				cout << a[i][j] << " ";
+			}
+			cout << endl;
+		}
+	}
+}
+
 void Xuat_Mang(int a[][100], int m, int n) {
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
@@ -75,7 +94,7 @@ int main() {
 
 	Cau_1(a, m, n);
 	Xuat_Mang(a, m, n);
-	Cau_4(a, m, n);
+	Cau_8(a, m, n);
 	//Cau_2(a, m, n);
 	//Cau_3(a, m, n);
 	return 0;
