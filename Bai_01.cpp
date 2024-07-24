@@ -35,6 +35,28 @@ void Cau_3(int a[][100], int& m, int& n) {
 	}
 }
 
+void Cau_4(int a[][100], int& m, int& n) {
+	cout << "Xuat cac phan tu thuoc duong bien tren la: ";
+	for (int j = 0; j < n; j++) {
+		cout << a[0][j] << " ";
+	}
+	cout << endl;
+	cout << "Xuat cac phan tu thuoc duong bien ben phai la: ";
+	for (int i = 0; i < m; i++) {
+		cout << a[i][n - 1] << " ";
+	}
+	cout << endl;
+	cout << "Xuat cac phan tu thuoc duong bien ben trai la: ";
+	for (int i = 0; i < m; i++) {
+		cout << a[i][0] << " ";
+	}
+	cout << endl;
+	cout << "Xuat cac phan tu thuoc duong bien duoi la: ";
+	for (int j = 0; j < n; j++) {
+		cout << a[m - 1][j] << " ";
+	}
+}
+
 void Xuat_Mang(int a[][100], int m, int n) {
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
@@ -53,8 +75,9 @@ int main() {
 
 	Cau_1(a, m, n);
 	Xuat_Mang(a, m, n);
+	Cau_4(a, m, n);
 	//Cau_2(a, m, n);
-	Cau_3(a, m, n);
+	//Cau_3(a, m, n);
 	return 0;
 }
 
