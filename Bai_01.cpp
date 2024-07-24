@@ -9,6 +9,16 @@ void Cau_1(int a[][100], int& m, int &n) {
 	}
 }
 
+void Cau_2(int a[][100], int& m, int& n) {
+	for (int i = 0; i < m;i++) {
+		int tongDong = 0;
+		for (int j = 0; j < n; j++) {
+			tongDong += a[i][j];
+		}
+		cout << "Tong dong [" << i + 1 << "] la: " << tongDong << endl;
+	}
+}
+
 void Xuat_Mang(int a[][100], int m, int n) {
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
@@ -27,5 +37,6 @@ int main() {
 
 	Cau_1(a, m, n);
 	Xuat_Mang(a, m, n);
+	Cau_2(a, m, n);
 	return 0;
 }
