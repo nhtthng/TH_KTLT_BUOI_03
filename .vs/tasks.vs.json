@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Bai_01",
+      "appliesTo": "Bai_01.cpp",
+      "type": "launch"
+    }
+  ]
+}

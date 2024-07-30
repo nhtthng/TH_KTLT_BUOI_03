@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 using namespace std;
 
 void Cau_1(int a[][100], int& m, int &n) {
@@ -84,19 +84,58 @@ void Xuat_Mang(int a[][100], int m, int n) {
 	}
 }
 
-int main() {
-	int a[100][100];
-	int n, m;
-	cout << "Nhap so luong dong: ";
-	cin >> m;
-	cout << "Nhap so luong cot: ";
-	cin >> n;
+string doiChuHoaDauMoiTu(const string& chuoi) {
+	string ketQua = chuoi;
+	bool canVietHoa = true;
 
-	Cau_1(a, m, n);
-	Xuat_Mang(a, m, n);
-	Cau_8(a, m, n);
-	//Cau_2(a, m, n);
-	//Cau_3(a, m, n);
+	for (size_t i = 0; i < ketQua.length(); ++i) {
+		if (isspace(ketQua[i])) {
+			canVietHoa = true;  
+		}
+		else if (canVietHoa) {
+			ketQua[i] = toupper(ketQua[i]);
+			canVietHoa = false;
+		}
+		else {
+			ketQua[i] = tolower(ketQua[i]);
+		}
+	}
+
+	return ketQua;
+}
+
+string chuanHoaChuoi(const string& chuoi) {
+	string ketQua;
+	bool trongTu = false;  
+	bool khoangTrangTruoc = true;  
+
+	for (size_t i = 0; i < chuoi.length(); ++i) {
+		if (isspace(chuoi[i])) {
+			if (trongTu) {
+				khoangTrangTruoc = true;
+				trongTu = false;
+			}
+		}
+		else {
+			if (khoangTrangTruoc && !ketQua.empty()) {
+				ketQua += ' ';  
+			}
+			ketQua += chuoi[i];
+			khoangTrangTruoc = false;
+			trongTu = true;
+		}
+	}
+
+	return ketQua;
+}
+
+
+int main() {
+	string chuoi;
+	cout << "Nhap chuoi: ";
+	getline(cin, chuoi);
+	string ketQua = chuanHoaChuoi(chuoi);
+	cout << "chuoi sau khi chuan hoa la: '" << ketQua << "'" << endl;
 	return 0;
 }
 
